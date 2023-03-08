@@ -7,8 +7,6 @@ export const actions = {
         const session = await locals.validateUser();
         if (!session?.user) return { success: false, message: "User not logged in" };
 
-        console.log(session);
-
         const data = await request.formData();
         const fullLink = data.get("full-link") as string;
         const shortLink = data.get("short-link") as string;
